@@ -25,8 +25,10 @@ namespace EmployeePayrollServiceADO
 
             //employeeRepository.AddEmployeeDetails(employeePayroll);
 
-            employeeRepository.GetSqlData();
-
+           // employeeRepository.GetSqlData();
+            employeeRepository.UpdateSalary();
         }
+
     }
+    
 }

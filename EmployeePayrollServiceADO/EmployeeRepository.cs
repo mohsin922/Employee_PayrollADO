@@ -111,5 +111,26 @@ namespace EmployeePayrollServiceADO
                 this.sqlConnection.Close();
             }
         }
+        //UseCase 3: Update Salary to 3000000
+        public void UpdateSalary()
+        {
+            //Open Connection
+            sqlConnection.Open();
+            string query = "update employee_payroll set BasicPay = 3000000.00 where Name = 'Mohsin'";
+            //Pass query to TSql
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            int result = sqlCommand.ExecuteNonQuery();
+            if (result != 0)
+            {
+                Console.WriteLine("Updated!");
+            }
+            else
+            {
+                Console.WriteLine("Not Updated!");
+            }
+            //Close Connection
+            sqlConnection.Close();
+            GetSqlData();
+        }
     }
 }
